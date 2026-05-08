@@ -1,0 +1,268 @@
+/* 기본 테마 설정 */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 스크롤바 완벽 숨김 */
+html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 5px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #aaa;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    color: #ffffff;
+    background-color: #2c2c2c;
+}
+
+.nav-btn.active {
+    color: #ffffff;
+    background-color: #2c2c2c;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.content-section {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 { font-size: 36px; color: #fff; margin-bottom: 10px; }
+.subtitle { color: #9b59b6; font-size: 18px; margin-bottom: 30px; }
+.section-title { font-size: 24px; color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 40px; }
+
+.profile-img { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 30px; border: 1px solid #333; }
+.fav-img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background-color: #121212; border-radius: 12px; border: 1px solid #333; margin-bottom: 15px; transition: all 0.3s ease; }
+
+.list-box { background-color: #1e1e1e; padding: 20px; border-radius: 12px; border: 1px solid #333; margin-top: 20px; }
+.list-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #2a2a2a; }
+.list-item:last-child { border-bottom: none; }
+.highlight { color: #f1c40f; font-weight: bold; }
+
+.api-card { background-color: #1e1e1e; padding: 40px; border-radius: 15px; text-align: center; border: 1px solid #333; }
+.fetch-btn { background-color: #9b59b6; color: white; border: none; padding: 15px 30px; font-size: 16px; border-radius: 10px; cursor: pointer; margin-bottom: 30px; }
+.fetch-btn:hover { background-color: #8e44ad; }
+.result-container { display: flex; justify-content: space-around; }
+.result-box h3 { font-size: 14px; color: #777; margin-bottom: 5px; }
+.result-box p { font-size: 22px; color: #fff; font-weight: bold; margin: 0; }
+
+footer { text-align: center; padding: 30px; color: #555; font-size: 14px; }
+
+.shikimori-link:hover .fav-img { cursor: pointer; transform: translateY(-4px) scale(1.015); border-color: #f1c40f; box-shadow: 0 10px 20px rgba(241, 196, 15, 0.3); }
+.starrail-link:hover .fav-img { cursor: pointer; transform: translateY(-4px) scale(1.015); border-color: #00d2ff; box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4); }
+
+/* 🌟 게임 그리드 수정: 가로 2열 배치 적용 */
+.discord-games-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* 2열로 변경 */
+    gap: 25px; /* 카드가 커진 만큼 여백도 시원하게 조절 */
+    margin-top: 10px; 
+}
+.discord-game-card { 
+    position: relative; 
+    border-radius: 12px; /* 살짝 더 둥글게 */
+    overflow: hidden; 
+    cursor: pointer; 
+    background-color: #2a2a2a; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    border: 1px solid #333; 
+}
+.discord-game-card img { 
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 16 / 9; 
+    object-fit: cover; 
+    display: block; 
+}
+.discord-game-card:hover { 
+    transform: translateY(-5px); /* 호버 시 조금 더 위로 뜨게 변경 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); 
+    border-color: #9b59b6; 
+}
+
+/* 게시판 전용 CSS 디자인 */
+.board-header-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.board-table th, .board-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.board-table th {
+    background-color: #2a2a2a;
+    color: #aaa;
+    font-weight: normal;
+}
+
+.board-table td.title-cell {
+    text-align: left;
+    color: #9b59b6;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.board-table td.title-cell:hover {
+    text-decoration: underline;
+    color: #b17cd6;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #aaa;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 8px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #9b59b6;
+}
+
+.board-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.board-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.2s;
+    border: none;
+}
+
+.board-btn.primary {
+    background-color: #9b59b6;
+    color: white;
+}
+.board-btn.primary:hover { background-color: #8e44ad; }
+
+.board-btn.outline {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #ccc;
+}
+.board-btn.outline:hover { background-color: #333; }
+
+.board-btn.danger {
+    background-color: #e74c3c;
+    color: white;
+}
+.board-btn.danger:hover { background-color: #c0392b; }
+
+.detail-header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #333;
+}
+
+.detail-header h3 { margin: 0 0 10px 0; font-size: 24px; }
+.detail-meta { color: #888; font-size: 14px; margin: 0; }
+
+.detail-body {
+    background-color: #1e1e1e;
+    padding: 30px 20px;
+    border-radius: 0 0 8px 8px;
+    min-height: 200px;
+    line-height: 1.6;
+    white-space: pre-wrap; 
+}
