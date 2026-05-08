@@ -1,35 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5cake</title>
+    <title>5_cake Portfoilo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <strong>아펠리오스 장인(7전 7패)</strong> <h3>유태헌의 자기소개서</h3></body> 
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuww2_cDzYgu1u6R9tixCfOy9iofQYmoVJfw&s" alt="아펠리오스 장인의 아펠리오스 스킨을 불러오지 못했습니다(7전7패)">
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">5cake</a>
+            <nav class="nav-links">
+                <button class="nav-btn active" onclick="openMenu(event, 'about')">Main</button>
+                <button class="nav-btn" onclick="openMenu(event, 'favorites')">Fav</button>
+                <button class="nav-btn" onclick="openMenu(event, 'recommend')">Ani</button>
+                <button class="nav-btn" onclick="openMenu(event, 'upcoming')">Game</button>
+                <button class="nav-btn" onclick="openMenu(event, 'board-section')">Board</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="about" class="content-section active">
+            <h1>5_cake</h1>
+            <p class="subtitle">애니메이션 리뷰어 & 프론트엔드 개발자</p>
+            <img src="./Aphelios_20 (1).jpg" alt="Profile" class="profile-img">
+            <h2 class="section-title">자기소개</h2>
+            <p>안녕하세요. 애니메이션의 환상적인 세계관과 아름다운 연출을 사랑하는 유태헌입니다. 단순한 시청을 넘어 제가 좋아하는 작품들을 웹 페이지로 기록하고 공유하는 것을 즐깁니다.</p>
+        </div>
+
+        <div id="favorites" class="content-section">
+            <h2 class="section-title">My All-Time Favorites</h2>
+            <p>수많은 작품들 중에서도 제 마음을 사로잡은 최고의 '인생작'들을 소개합니다.</p>
+            
+            <div class="list-box">
+                <a href="https://namu.wiki/w/%EA%B7%80%EC%97%BD%EA%B8%B0%EB%A7%8C%20%ED%95%9C%20%EA%B2%8C%20%EC%95%84%EB%8B%8C%20%EC%8B%9C%ED%82%A4%EB%AA%A8%EB%A6%AC%20%EC%96%91/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98" target="_blank" class="shikimori-link">
+                <img src="https://private-user-images.githubusercontent.com/274979275/589234514-c54e6ced-5c91-4f9a-a24e-b2411228a749.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzgxOTc5NDAsIm5iZiI6MTc3ODE5NzY0MCwicGF0aCI6Ii8yNzQ5NzkyNzUvNTg5MjM0NTE0LWM1NGU2Y2VkLTVjOTEtNGY5YS1hMjRlLWIyNDExMjI4YTc0OS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUwN1QyMzQ3MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03MDhmNmE1YjY5YTA4YTY4MmMwZTc0NmRkY2Y5YzZlOWViMTk2ODgxZGY3OTkzODM2YTE2YTUwZjZjOTVkMGEzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.5N2oCYIOVTSr3IpQhCEUKzsgsSfk30eEJks3Tjy1fhs" alt="귀엽기만 한 게 아닌 시키모리 양" class="fav-img">
+                </a>
+
+                <div class="list-item" style="border-bottom: none; padding-bottom: 5px;">
+                    <span><strong>최애 애니 (Ani)</strong></span>
+                    <span class="highlight">귀엽기만 한 게 아닌 시키모리 양</span>
+                </div>
+                <p style="font-size: 14px; color: #888; margin-top: 0; padding-bottom: 0;">
+                    그저 귀엽기만 한 게 아니라 결정적인 순간에 보여주는 '멋짐 폭발' 걸크러시와 달달한 로맨스가 완벽하게 조화된 작품입니다.
+                </p>
+            </div>
+
+            <div class="list-box">
+                <div class="Fav">
+                <a href="https://namu.wiki/w/%EB%B6%95%EA%B4%B4:%20%EC%8A%A4%ED%83%80%EB%A0%88%EC%9D%BC" target="_blank" class="starrail-link">
+                <img src="https://private-user-images.githubusercontent.com/274979275/589235252-7d6d834d-e71d-4639-bc62-5561ee19f050.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzgxOTc5NDAsIm5iZiI6MTc3ODE5NzY0MCwicGF0aCI6Ii8yNzQ5NzkyNzUvNTg5MjM1MjUyLTdkNmQ4MzRkLWU3MWQtNDYzOS1iYzYyLTU1NjFlZTE5ZjA1MC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUwN1QyMzQ3MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lMzdkMmQyMmU1M2JhNTk5YjJhODM4NTQ4ZjVhODk0MzUyNGFmMzJlMjBlMjVlNWI0N2E5MWE1NGQxZWRkYzk1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.BMev0RaX4-ZQHzBqdvXCbV5FWdeXNOz8DMc_KyiXLfo" alt="붕괴: 스타레일" class="fav-img">
+                </a>
+                </div>
+
+                <div class="list-item" style="border-bottom: none; padding-bottom: 5px;">
+                    <span><strong>최애 게임 (Game)</strong></span>
+                    <span class="highlight">붕괴: 스타레일</span>
+                </div>
+                <p style="font-size: 14px; color: #888; margin-top: 0; margin-bottom: 0;">
+                    은하 열차를 타고 우주를 개척하는 방대한 스토리, 매력적인 캐릭터들, 그리고 깊이 있는 턴제 전투 시스템을 갖춘 게임입니다.
+                </p>
+            </div>
+        </div>
+
+        <div id="recommend" class="content-section">
+            <h2 class="section-title">Ani</h2>
+            <p>어떤 작품을 볼지 고민되시나요? 아래 버튼을 눌러 랜덤으로 명작을 추천받아 보세요.</p>
+            
+            <div class="api-card">
+                <h3>Random Animation Picker</h3>
+                <button class="fetch-btn" onclick="recommendAni()">랜덤 추천받기</button>
+                <div class="result-container">
+                    <div class="result-box">
+                        <h3>제목 (Title)</h3>
+                        <p id="ani-title" class="highlight">-</p>
+                    </div>
+                    <div class="result-box">
+                        <h3>장르 (Genre)</h3>
+                        <p id="ani-genre">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="upcoming" class="content-section">
+            <h2 class="section-title">Game Life</h2>
+            <p>스타레일을 비롯해 다양한 게임의 세계관을 탐험하고 분석하는 것을 좋아합니다.</p>
+            
+            <div class="list-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3 style="margin: 0; font-size: 18px; color: #fff;">Games I like</h3>
+                </div>
+                
+                <div class="discord-games-grid">
+                    <div class="discord-game-card"><img src="https://private-user-images.githubusercontent.com/274979275/589236828-db975eb4-f4b2-4398-8b25-640fa69037ec.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzgxOTgzNjUsIm5iZiI6MTc3ODE5ODA2NSwicGF0aCI6Ii8yNzQ5NzkyNzUvNTg5MjM2ODI4LWRiOTc1ZWI0LWY0YjItNDM5OC04YjI1LTY0MGZhNjkwMzdlYy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUwN1QyMzU0MjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNmZlMzQyMTE1YzkxMGVhMzJjOTc5NWRjNmYxZDQ0ZWU4ZTdhOWQ5YTZhMDc4MDRkYmIxYWY1OTk2YjYzZTA3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.ETvL6xvUlEkZBza-StuiOtZ1fv9KPT5vogdP6TCpOUQ" alt="원신"></div>
+                    <div class="discord-game-card"><img src="https://private-user-images.githubusercontent.com/274979275/589235252-7d6d834d-e71d-4639-bc62-5561ee19f050.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzgxOTc5NDAsIm5iZiI6MTc3ODE5NzY0MCwicGF0aCI6Ii8yNzQ5NzkyNzUvNTg5MjM1MjUyLTdkNmQ4MzRkLWU3MWQtNDYzOS1iYzYyLTU1NjFlZTE5ZjA1MC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUwN1QyMzQ3MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lMzdkMmQyMmU1M2JhNTk5YjJhODM4NTQ4ZjVhODk0MzUyNGFmMzJlMjBlMjVlNWI0N2E5MWE1NGQxZWRkYzk1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.BMev0RaX4-ZQHzBqdvXCbV5FWdeXNOz8DMc_KyiXLfo" alt="스타레일"></div>
+                    <div class="discord-game-card"><img src="https://private-user-images.githubusercontent.com/274979275/589237807-19625aa8-94d3-41c2-99e2-1a3f174df190.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzgxOTg2MjQsIm5iZiI6MTc3ODE5ODMyNCwicGF0aCI6Ii8yNzQ5NzkyNzUvNTg5MjM3ODA3LTE5NjI1YWE4LTk0ZDMtNDFjMi05OWUyLTFhM2YxNzRkZjE5MC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUwN1QyMzU4NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01N2UyNzc2OTA1NDhmYjA5N2ViMmEzZDE5OTFkODk5NWQ4M2I3MzM5NjFlOWYxMmExNmRjNWE5ZDc0Mzg2MjA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.ykOJTbEsvqamnFXsvN9IMdW95qIh9gguvKQ9YHXiLcM" alt="젠레스존제로"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n4" alt="Game 4"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n5" alt="Game 5"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n6" alt="Game 6"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n7" alt="Game 7"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n8" alt="Game 8"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="board-section" class="content-section">
+            <h2 class=\"section-title\">Guest Board</h2>
+            <p>자유롭게 방명록이나 의견을 남겨주세요!</p>
+
+            <div id="board-list-view">
+                <div class="board-header-actions">
+                    <button class="board-btn primary" onclick="showBoardView('board-write-view')">글쓰기</button>
+                </div>
+                <table class="board-table">
+                    <thead>
+                        <tr>
+                            <th width="10%">번호</th>
+                            <th width="50%">제목</th>
+                            <th width="20%">작성자</th>
+                            <th width="20%">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody id="board-tbody">
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="board-write-view" style="display: none;">
+                <div class="form-group">
+                    <label>제목</label>
+                    <input type="text" id="board-title" class="form-input" placeholder="제목을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label>작성자</label>
+                    <input type="text" id="board-author" class="form-input" placeholder="이름이나 닉네임을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label>내용</label>
+                    <textarea id="board-content" class="form-input" rows="8" placeholder="내용을 입력하세요"></textarea>
+                </div>
+                <div class="board-form-actions">
+                    <button class="board-btn outline" onclick="showBoardView('board-list-view')">취소</button>
+                    <button class="board-btn primary" onclick="savePost()">등록하기</button>
+                </div>
+            </div>
+
+            <div id="board-detail-view" style="display: none;">
+                <div class="detail-header">
+                    <h3 id="detail-title">제목이 들어갑니다</h3>
+                    <p id="detail-info" class="detail-meta">작성자: 홍길동 | 작성일: 2026.05.08</p>
+                </div>
+                <div class="detail-body">
+                    <p id="detail-content">내용이 들어갑니다...</p>
+                </div>
+                <div class="board-form-actions">
+                    <button class="board-btn outline" onclick="showBoardView('board-list-view')">목록으로</button>
+                    <button class="board-btn danger" id="delete-btn">삭제하기</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2026 5_cake. All rights reserved.
+    </footer>
+
+    <script>
+        // 메뉴 전환 함수
+        function openMenu(evt, menuName) {
+            const sections = document.getElementsByClassName("content-section");
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].classList.remove("active");
+            }
+
+            const btns = document.getElementsByClassName("nav-btn");
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+
+            document.getElementById(menuName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
     
-    <hr>
-    <h2>한줄 소개</h2>
-    <p>아펠리오스 장인의 html 포트폴리오 입니다</p>
-    <p><h2>기술 스택</h2></p>
-    <ul>
-        <li><strong>롤 실력 : </strong>실딱이</li>
-        <li><strong>팀탓 실력 : </strong>챌린저</li>
-        <li><strong>원딜 실력 : </strong>장인</li>
-    </ul>
-
-    <hr>
-    <p><h2>주요 경험</h2></p>
-    <p><strong>2026 4월 - 현재 : </strong>랭겜 520판/아펠리오스 120판(7전 7패)</p> 
-    <p><strong>2026 1월 - 과거 : </strong>일겜 가끔</p> 
-
-    <hr>
-    <p><h2>자기소개</h2></p>
-    <p>소개할 자기가 없어요</p>
-    <hr>
-
-    아 드르륵~
-    
+    <script src="app.js"></script>
 </body>
 </html>
