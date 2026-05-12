@@ -7,16 +7,16 @@ function recommendAni() {
     titleElement.style.color = "white"; 
     genreElement.innerText = "...";
 
-    const aniList = [
-        { title: "너의 이름은.", genre: "로맨스 / 판타지" },
-        { title: "귀멸의 칼날", genre: "액션 / 다크 판타지" },
-        { title: "스즈메의 문단속", genre: "판타지 / 어드벤처" },
-        { title: "주술회전", genre: "액션 / 소년 만화" },
-        { title: "진격의 거인", genre: "다크 판타지 / 액션" },
-        { title: "바이올렛 에버가든", genre: "드라마 / 감동" },
-        { title: "센과 치히로의 행방불명", genre: "판타지 / 명작" },
-        { title: "귀엽기만 한 게 아닌 시키모리 양", genre: "로맨스 / 일상" }
-    ];
+    // const aniList = [
+    //     { title: "너의 이름은.", genre: "로맨스 / 판타지" },
+    //     { title: "귀멸의 칼날", genre: "액션 / 다크 판타지" },
+    //     { title: "스즈메의 문단속", genre: "판타지 / 어드벤처" },
+    //     { title: "주술회전", genre: "액션 / 소년 만화" },
+    //     { title: "진격의 거인", genre: "다크 판타지 / 액션" },
+    //     { title: "바이올렛 에버가든", genre: "드라마 / 감동" },
+    //     { title: "센과 치히로의 행방불명", genre: "판타지 / 명작" },
+    //     { title: "귀엽기만 한 게 아닌 시키모리 양", genre: "로맨스 / 일상" }
+    // ];
 
     setTimeout(() => {
         const randomAni = aniList[Math.floor(Math.random() * aniList.length)];
