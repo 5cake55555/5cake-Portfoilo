@@ -7,6 +7,7 @@ function recommendAni() {
     titleElement.style.color = "white"; 
     genreElement.innerText = "...";
 
+    // 🌟 의도하신 대로 주석 처리 상태를 원본 그대로 유지합니다.
     // const aniList = [
     //     { title: "너의 이름은.", genre: "로맨스 / 판타지" },
     //     { title: "귀멸의 칼날", genre: "액션 / 다크 판타지" },
@@ -32,6 +33,7 @@ function recommendAni() {
 // ==========================================
 
 const BOARD_STORAGE_KEY = '5cake_board_data';
+let editingPostId = null; // 🌟 현재 수정 중인 글의 ID를 저장할 변수 추가
 
 // 1. 데이터 불러오기
 function getBoardData() {
@@ -44,20 +46,22 @@ function saveBoardData(data) {
     localStorage.setItem(BOARD_STORAGE_KEY, JSON.stringify(data));
 }
 
-// 3. 화면 전환하기 (목록 / 쓰기 / 상세보기 중 하나만 켜기)
+// 3. 화면 전환하기 (단순 토글만 수행하도록 수정하여 수정창 로딩 시 데이터 유지)
 function showBoardView(viewId) {
     document.getElementById('board-list-view').style.display = 'none';
     document.getElementById('board-write-view').style.display = 'none';
     document.getElementById('board-detail-view').style.display = 'none';
     
     document.getElementById(viewId).style.display = 'block';
+}
 
-    // 작성 폼으로 갈 때는 입력창 비우기
-    if (viewId === 'board-write-view') {
-        document.getElementById('board-title').value = '';
-        document.getElementById('board-author').value = '';
-        document.getElementById('board-content').value = '';
-    }
+// 🌟 새 글 작성 폼을 열 때 입력창을 완전히 비워주는 전용 함수 추가
+function openWriteForm() {
+    editingPostId = null; // 수정 모드 리셋
+    document.getElementById('board-title').value = '';
+    document.getElementById('board-author').value = '';
+    document.getElementById('board-content').value = '';
+    showBoardView('board-write-view');
 }
 
 // 4. 글 목록 그리기
@@ -84,7 +88,7 @@ function renderBoardList() {
     });
 }
 
-// 5. 새 글 저장하기 (Create)
+// 5. 글 저장 및 수정하기 (Create & Update 공통 처리)
 function savePost() {
     const title = document.getElementById('board-title').value.trim();
     const author = document.getElementById('board-author').value.trim();
@@ -95,24 +99,35 @@ function savePost() {
         return;
     }
 
-    const posts = getBoardData();
-    
-    // 오늘 날짜 구하기 (YYYY.MM.DD 형식)
+    let posts = getBoardData();
     const today = new Date();
     const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
 
-    const newPost = {
-        id: Date.now(), // 겹치지 않는 고유 ID 생성
-        title: title,
-        author: author,
-        content: content,
-        date: dateStr
-    };
+    if (editingPostId) {
+        // 🌟 수정 모드일 때: 기존 데이터 매칭해서 변경
+        const postIndex = posts.findIndex(p => p.id === editingPostId);
+        if (postIndex !== -1) {
+            posts[postIndex].title = title;
+            posts[postIndex].author = author;
+            posts[postIndex].content = content;
+        }
+        alert('게시글이 성공적으로 수정되었습니다.');
+    } else {
+        // 새 글 등록 모드일 때
+        const newPost = {
+            id: Date.now(), // 겹치지 않는 고유 ID 생성
+            title: title,
+            author: author,
+            content: content,
+            date: dateStr
+        };
+        posts.push(newPost);
+        alert('게시글이 성공적으로 등록되었습니다.');
+    }
 
-    posts.push(newPost);
     saveBoardData(posts);
+    editingPostId = null; // 수정 상태 해제
     
-    alert('게시글이 성공적으로 등록되었습니다.');
     showBoardView('board-list-view');
     renderBoardList();
 }
@@ -131,13 +146,30 @@ function viewPost(id) {
     document.getElementById('detail-info').innerText = `작성자: ${post.author} | 작성일: ${post.date}`;
     document.getElementById('detail-content').innerText = post.content;
     
-    // 삭제 버튼에 현재 보고 있는 글의 ID를 물려줌
+    // 🌟 수정 및 삭제 버튼에 현재 조회 중인 게시글 고유 ID 바인딩
+    document.getElementById('edit-btn').setAttribute('onclick', `editPost(${post.id})`);
     document.getElementById('delete-btn').setAttribute('onclick', `deletePost(${post.id})`);
 
     showBoardView('board-detail-view');
 }
 
-// 7. 글 삭제하기 (Delete)
+// 🌟 7. 글 수정 화면 띄우기 (기존 값 입력창에 세팅)
+function editPost(id) {
+    const posts = getBoardData();
+    const post = posts.find(p => p.id === id);
+
+    if (!post) return;
+
+    // 인풋 필드에 기존 글 정보 미리 채워넣기
+    document.getElementById('board-title').value = post.title;
+    document.getElementById('board-author').value = post.author;
+    document.getElementById('board-content').value = post.content;
+
+    editingPostId = id; // 전역 변수에 수정할 글 타겟 ID 지정
+    showBoardView('board-write-view');
+}
+
+// 8. 글 삭제하기 (Delete)
 function deletePost(id) {
     if (!confirm('정말로 이 게시글을 삭제하시겠습니까? (복구할 수 없습니다)')) {
         return;
