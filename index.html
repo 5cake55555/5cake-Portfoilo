@@ -99,8 +99,8 @@
                     <div class="discord-game-card"><img src="https://i.pinimg.com/736x/5c/e1/94/5ce1949bb8b04cdc40cc5589ac14a2a4.jpg" alt="스타레일"></div>
                     <div class="discord-game-card"><img src="https://i.pinimg.com/1200x/81/a1/1d/81a11daf911b74cb349d52dcda07b117.jpg" alt="젠레스존제로"></div>
                     <div class="discord-game-card"><img src="https://i.pinimg.com/736x/0d/78/ea/0d78eadec1c46415740fa5ada9591ecb.jpg" alt="명조"></div>
-                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n5" alt="Game 5"></div>
-                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n6" alt="Game 6"></div>
+                    <div class="discord-game-card"><img src="https://i.pinimg.com/1200x/ec/d3/b2/ecd3b22c092baeaac9c0880c889a7868.jpg" alt="리그오브레전드"></div>
+                    <div class="discord-game-card"><img src="https://i.pinimg.com/1200x/e8/63/ce/e863ce26e670a7ac8a3bbad32a9740c8.jpg" alt="발로란트"></div>
                     <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n7" alt="Game 7"></div>
                     <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Game\n8" alt="Game 8"></div>
                 </div>
@@ -108,12 +108,12 @@
         </div>
 
         <div id="board-section" class="content-section">
-            <h2 class=\"section-title\">Guest Board</h2>
+            <h2 class="section-title">Guest Board</h2>
             <p>자유롭게 의견을 남겨주세요!</p>
 
             <div id="board-list-view">
                 <div class="board-header-actions">
-                    <button class="board-btn primary" onclick="showBoardView('board-write-view')">글쓰기</button>
+                    <button class="board-btn primary" onclick="openWriteForm()">글쓰기</button>
                 </div>
                 <table class="board-table">
                     <thead>
@@ -158,6 +158,7 @@
                 </div>
                 <div class="board-form-actions">
                     <button class="board-btn outline" onclick="showBoardView('board-list-view')">목록으로</button>
+                    <button class="board-btn primary" id="edit-btn">수정하기</button>
                     <button class="board-btn danger" id="delete-btn">삭제하기</button>
                 </div>
             </div>
