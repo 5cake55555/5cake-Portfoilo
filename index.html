@@ -10,24 +10,25 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">5cake</a>
-            <nav class="nav-links">
-                <button class="nav-btn active" onclick="openMenu(event, 'about')">Main</button>
+            <a href="#" class="logo" onclick="location.reload()">5cake</a>
+            <nav class="nav-links" style="display: none;">
+                <button class="nav-btn" onclick="openMenu(event, 'about')">Main</button>
                 <button class="nav-btn" onclick="openMenu(event, 'favorites')">Fav</button>
                 <button class="nav-btn" onclick="openMenu(event, 'recommend')">Ani</button>
                 <button class="nav-btn" onclick="openMenu(event, 'upcoming')">Game</button>
                 <button class="nav-btn" onclick="openMenu(event, 'board-section')">Board</button>
+                <button class="nav-btn" id="nav-auth-btn" onclick="openMenu(event, 'auth-section')">Login</button>
             </nav>
         </div>
     </header>
 
     <main>
-        <div id="about" class="content-section active">
+        <div id="about" class="content-section">
             <h1>5_cake</h1>
             <p class="subtitle">애니메이션 리뷰어 & 프론트엔드 개발자</p>
             <img src="https://i.pinimg.com/1200x/a8/bc/e5/a8bce5df4f63461cedebc13addf99176.jpg" class="profile-img">
             <h2 class="section-title">자기소개</h2>
-            <p>안녕하세요. 애니메이션의 환상적인 세계관과 아름다운 연출을 사랑하는 유태헌입니다. 단순한 시청을 넘어 제가 좋아하는 작품들을 웹 페이지로 기록하고 공유하는 것을 즐깁니다.</p>
+            <p>안녕하세요. 애니메이션의 환상적인 세계관 and 아름다운 연출을 사랑하는 유태헌입니다. 단순한 시청을 넘어 제가 좋아하는 작품들을 웹 페이지로 기록하고 공유하는 것을 즐깁니다.</p>
         </div>
 
         <div id="favorites" class="content-section">
@@ -66,21 +67,23 @@
         </div>
 
         <div id="recommend" class="content-section">
-            <h2 class="section-title">Ani</h2>
-            <p>제가 지금까지 봐온 애니들을 아래 버튼을 눌러 랜덤으로 추천받아 보세요.</p>
+            <h2 class="section-title">Ani Life</h2>
+            <p>제가 감명 깊게 본 매력적인 애니메이션들입니다.</p>
             
-            <div class="api-card">
-                <h3>Random Animation Picker</h3>
-                <button class="fetch-btn" onclick="recommendAni()">랜덤 추천받기</button>
-                <div class="result-container">
-                    <div class="result-box">
-                        <h3>제목 (Title)</h3>
-                        <p id="ani-title" class="highlight">-</p>
-                    </div>
-                    <div class="result-box">
-                        <h3>장르 (Genre)</h3>
-                        <p id="ani-genre">-</p>
-                    </div>
+            <div class="list-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3 style="margin: 0; font-size: 18px; color: #fff;">Animes I like</h3>
+                </div>
+                
+                <div class="discord-games-grid">
+                    <div class="discord-game-card"><img src="https://i.pinimg.com/1200x/4c/b8/7e/4cb87ef4ff12fe276932aa0469c54d81.jpg" alt="귀엽기만 한 게 아닌 시키모리 양"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Ani\n1" alt="Ani 1"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Ani\n2" alt="Ani 2"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Ani\n3" alt="Ani 3"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Ani\n4" alt="Ani 4"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Ani\n5" alt="Ani 5"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Ani\n6" alt="Ani 6"></div>
+                    <div class="discord-game-card"><img src="https://placehold.co/400x225/2a2a2a/9b59b6?text=Ani\n7" alt="Ani 7"></div>
                 </div>
             </div>
         </div>
@@ -125,7 +128,7 @@
                         </tr>
                     </thead>
                     <tbody id="board-tbody">
-                        </tbody>
+                    </tbody>
                 </table>
             </div>
 
@@ -162,7 +165,61 @@
                     <button class="board-btn danger" id="delete-btn">삭제하기</button>
                 </div>
             </div>
+        </div>
 
+        <div id="auth-section" class="content-section">
+            <div id="login-view">
+                <h2 class="section-title">Login Required</h2>
+                <p>죄송합니다. 본 포트폴리오 웹사이트는 로그인 후 이용이 가능합니다.</p>
+                <div class="list-box">
+                    <div class="form-group">
+                        <label>아이디</label>
+                        <input type="text" id="login-id" class="form-input" placeholder="아이디를 입력하세요">
+                    </div>
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label>비밀번호</label>
+                        <input type="password" id="login-pw" class="form-input" placeholder="비밀번호를 입력하세요">
+                    </div>
+                </div>
+                <div class="board-form-actions">
+                    <button class="board-btn outline" onclick="showAuthView('signup-view')">회원가입하러 가기</button>
+                    <button class="board-btn primary" onclick="handleLogin()">로그인</button>
+                </div>
+            </div>
+
+            <div id="signup-view" style="display: none;">
+                <h2 class="section-title">Sign Up</h2>
+                <p>새로운 계정을 만듭니다. 회원가입 후 로그인할 수 있습니다.</p>
+                <div class="list-box">
+                    <div class="form-group">
+                        <label>아이디</label>
+                        <input type="text" id="signup-id" class="form-input" placeholder="사용할 아이디를 입력하세요">
+                    </div>
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label>비밀번호</label>
+                        <input type="password" id="signup-pw" class="form-input" placeholder="사용할 비밀번호를 입력하세요">
+                    </div>
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label>닉네임 (게시판 작성명)</label>
+                        <input type="text" id="signup-nickname" class="form-input" placeholder="게시판에 표시될 닉네임을 입력하세요">
+                    </div>
+                </div>
+                <div class="board-form-actions">
+                    <button class="board-btn outline" onclick="showAuthView('login-view')">로그인하러 가기</button>
+                    <button class="board-btn primary" onclick="handleSignup()">회원가입 완료</button>
+                </div>
+            </div>
+
+            <div id="profile-view" style="display: none;">
+                <h2 class="section-title">My Profile</h2>
+                <div class="list-box">
+                    <p style="font-size: 18px; margin: 0 0 10px 0;">안녕하세요, <span id="user-display-name" class="highlight" style="font-size: 22px;"></span>님!</p>
+                    <p style="color: #aaa; font-size: 14px; margin: 0;">5_cake 포트폴리오 웹사이트에 성공적으로 로그인되어 있습니다.</p>
+                </div>
+                <div class="board-form-actions">
+                    <button class="board-btn danger" onclick="handleLogout()">로그아웃</button>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -171,7 +228,6 @@
     </footer>
 
     <script>
-        // 메뉴 전환 함수
         function openMenu(evt, menuName) {
             const sections = document.getElementsByClassName("content-section");
             for (let i = 0; i < sections.length; i++) {
@@ -187,7 +243,6 @@
             evt.currentTarget.classList.add("active");
         }
     </script>
-    
     <script src="app.js"></script>
 </body>
 </html>
